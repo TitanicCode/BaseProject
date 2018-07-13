@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/URLConnectionClient/URLConnectionClient.iml" filepath="$PROJECT_DIR$/URLConnectionClient/URLConnectionClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WSClient/WSClient.iml" filepath="$PROJECT_DIR$/WSClient/WSClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WSServer/WSServer.iml" filepath="$PROJECT_DIR$/WSServer/WSServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxfClient/cxfClient.iml" filepath="$PROJECT_DIR$/cxfClient/cxfClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxfServer/cxfServer.iml" filepath="$PROJECT_DIR$/cxfServer/cxfServer.iml" />
+    </modules>
+  </component>
+</project>

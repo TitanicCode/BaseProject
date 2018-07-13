@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--targetRuntime有MyBatis3，MyBatis3Simple，ibatis2,其中MyBatis3会自动生成example文件-->
+    <!--defaultModelType值默认为conditional，另外还有flat，hierarchical两个值。-->
+    <context id="Mysql" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <!--分隔符-->
+        <!--打开关键字设置-->
+        <property name="autoDelimitKeywords" value="true"/>
+        <!--关键字前加单引号-->
+        <property name="beginningDelimiter" value="`"/>
+        <!--关键字后加单引号-->
+        <property name="endingDelimiter" value="`"/>
+
+        <!-- 一些工具 -->
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
+
+        <commentGenerator>
+            <!-- 取消时间戳 -->
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <!-- 1）当某个注释被你删掉之后，你再次点击自动生成，没有注释的内容可能会仍然存在，那么有可能会生成重复内容。
+2）当设置为完全没有注释时，那么每次重新生成逆向工程之前，一定要把所有自动生成的文件删掉，否则xml文件会在已有的内容之后添加自动生成的内容，造成同样内容累加 3）综上最好不要删除注释，也最好不要设置关闭注释。4）suppress 抑制-->
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+        <!--数据库链接 参数 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/oa_ssm" userId="root"
+                        password="123">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <!-- This property is used to specify whether MyBatis Generator should
+                force the use of java.math.BigDecimal for DECIMAL and NUMERIC fields, -->
+            <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+         NUMERIC 类型解析为java.math.BigDecimal -->
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="api.pojo.sys"
+                            targetProject="src/main/java">
+            <!-- 是否对数据库查询结果进行trim操作：将接收到的字符串空格去掉，比如数据库定义varchar（10），但填入的内容只占2个字符，则剩余的用空格占位，但pojo中总不能出现空格吧 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 生成映射文件的包名和位置 -->
+        <sqlMapGenerator targetPackage="api.dao.sys"
+                         targetProject="src/main/java">
+        </sqlMapGenerator>
+
+        <!-- 生成DAO的包名和位置 XMLMAPPER | ANNOTATEDMAPPER-->
+        <!-- XMLMAPPER 使用XML方式| ANNOTATEDMAPPER 使用注解方式-->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="api.dao.sys" targetProject="src/main/java">
+        </javaClientGenerator>
+
+        <!-- 要生成哪些表 -->
+        <table tableName="sys_menu" domainObjectName="SysMenu">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+        <table tableName="sys_role" domainObjectName="SysRole">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+        <table tableName="sys_user" domainObjectName="SysUser">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+        <table tableName="sys_role_menu" domainObjectName="SysRoleMenu">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+        <table tableName="sys_user_role" domainObjectName="SysUserRole">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+        <table tableName="sys_config" domainObjectName="SysConfig">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+        <table tableName="sys_log" domainObjectName="SysLog">
+            <generatedKey column="id" sqlStatement="Mysql"/>
+        </table>
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FastDFSProject/FastDFSProject.iml" filepath="$PROJECT_DIR$/FastDFSProject/FastDFSProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GitProject/GitProject.iml" filepath="$PROJECT_DIR$/GitProject/GitProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RedisProject/RedisProject.iml" filepath="$PROJECT_DIR$/RedisProject/RedisProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SolrProject/SolrProject.iml" filepath="$PROJECT_DIR$/SolrProject/SolrProject.iml" />
+    </modules>
+  </component>
+</project>
