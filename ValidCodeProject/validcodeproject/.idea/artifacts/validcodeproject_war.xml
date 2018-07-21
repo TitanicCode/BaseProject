@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="validcodeproject:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="validcode-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="validcodeproject:war exploded" />
+    </root>
+  </artifact>
+</component>
