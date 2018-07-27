@@ -7,6 +7,9 @@
           <element id="module-output" name="validcodeproject" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="validcode-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="validcodeproject" />
+          </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.14.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.14.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.14.RELEASE" />

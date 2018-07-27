@@ -7,7 +7,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <!--classpath*带着*表示会扫描导入jar包的对应路径文件-->
-        <param-value>classpath*:app*.xml</param-value>
+        <param-value>classpath*:spring/app*.xml</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

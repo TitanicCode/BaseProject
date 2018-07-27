@@ -33,9 +33,10 @@ public class ValidCode {
         System.out.println(code);
         //存储到redsis
         Jedis jedis = jedisClient.getJedis();
-        jedis.auth("redis001");
-        jedisClient.set("phonenum","code",jedis);
-        jedis.expire("phonenum",180);
+        //jedis.auth("redis001");
+        jedisClient.set(phonenum,code,jedis);
+        //设置有效期，180代表180秒为3分钟
+        jedis.expire(phonenum,180);
         jedis.close();
         code=callback==null?code:callback+"('"+code+"')";
         return  code;//1234
@@ -57,17 +58,18 @@ public class ValidCode {
                 }
             }
         }
-
-
         if (cookie == null) {//首次访问没有cookie,.则创建新的cookie
             uuid= UUID.randomUUID().toString();//生成uuid
             cookie=new Cookie("suibian",uuid );//将uuid放到cookie中,下次用户会带过来
+            //设置cookie的存贮路径，当测试的时候发现cookie取不到，总为null时，要考虑到是否是这个路径出了问题
             cookie.setPath("/");
         }
+        System.out.println("redis key uuid"+uuid.toString());
 
         Jedis jedis = jedisClient.getJedis();
-        jedis.auth("redis001");
+        //jedis.auth("redis001");
         jedisClient.set(uuid,validateCode.getCode(),jedis);//以uuid作为key ,将验证码放到rendis中
+        System.out.println(validateCode.getCode().toString());
         jedis.expire(uuid,180);
         jedis.close();
         response.addCookie(cookie);

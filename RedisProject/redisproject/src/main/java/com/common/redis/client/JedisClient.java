@@ -20,7 +20,7 @@ public class JedisClient implements JedisInterface{
     @Override
     public Jedis getJedis() {
         Jedis resource = jedisPool.getResource();
-        resource.auth("redis001");
+        //resource.auth("redis001");
         return resource;
     }
 
@@ -32,7 +32,6 @@ public class JedisClient implements JedisInterface{
 
     @Override
     public String get(String key,Jedis jedis) {
-
         return jedis.get(key);
     }
 
@@ -50,6 +49,7 @@ public class JedisClient implements JedisInterface{
         for (Field field : fields) {
             //先判断上面有没有注解,如果没有,则继续.如果有就跳过
             //注解是先定义好功能,然后使用,而不是随便写了一个东西,如何实现
+            //这里是在解析SkipRedis注解
             SkipRedis annotation = field.getAnnotation(SkipRedis.class);
             if (annotation != null) {//包含特定注解的变量不会被写到redis中
                 continue;
@@ -68,7 +68,6 @@ public class JedisClient implements JedisInterface{
                 if (readMethod != null) {
                     Object result = readMethod.invoke(o);
                     if (result != null) {
-
                         hSet(key,name,result.toString(),jedis);
                     }
                 }
