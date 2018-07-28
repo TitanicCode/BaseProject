@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="payweixin:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="payweixin-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="payweixin:war exploded" />
+    </root>
+  </artifact>
+</component>
