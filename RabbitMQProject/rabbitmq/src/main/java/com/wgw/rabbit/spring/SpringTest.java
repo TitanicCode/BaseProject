@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class SpringTest {
     public static void main(String[] args) throws InterruptedException {
-        ApplicationContext context=new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        ApplicationContext context=new ClassPathXmlApplicationContext("classpath:spring/applicationContext.xml");
         RabbitTemplate template = context.getBean(RabbitTemplate.class);
         // template.setRoutingKey("");
         //template.setExchange();

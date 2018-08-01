@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="redismq:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="usercontroller.war">
+      <element id="artifact" artifact-name="redismq:war exploded" />
+    </root>
+  </artifact>
+</component>

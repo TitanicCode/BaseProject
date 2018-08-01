@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.7.xsd">
+
+    <context:component-scan base-package="com.wgw.redis.mq"/>
+
+
+        <rabbit:connection-factory id="connectionFactory" host="rabbitmq.qfjava.cn" port="5672" username="test" password="test" virtual-host="/test" />
+
+        <!--因为这边是接收方,所以不需要template-->
+
+        <!--用于管理交换机队列-->
+        <rabbit:admin connection-factory="connectionFactory"/>
+
+        <!--在我们进行规划的时候,如果不清楚消息到底是发送给一个人还是多个人,那么就默认是多个人-->
+        <!--声明队列,自动声明-->
+        <rabbit:queue name="wgwQueue" auto-declare="true" durable="true"/>
+
+        <rabbit:fanout-exchange name="wgwFanoutExchange1" auto-declare="true" durable="true">
+            <!--将队列绑定到交换机上面-->
+            <rabbit:bindings>
+                <rabbit:binding queue="wgwQueue"></rabbit:binding>
+            </rabbit:bindings>
+
+        </rabbit:fanout-exchange>
+
+    <rabbit:listener-container connection-factory="connectionFactory">
+
+        <rabbit:listener ref="messageListener" method="onMessage" queue-names="wgwQueue"/>
+        
+    </rabbit:listener-container>
+
+</beans>

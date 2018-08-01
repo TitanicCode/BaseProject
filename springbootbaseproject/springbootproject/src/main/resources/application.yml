@@ -1,0 +1,4 @@
+#要注意yml配置文件中，port: 8000中间必须有空格，否则不识别
+server:
+  port: 8000
+  asdasd: dasdas

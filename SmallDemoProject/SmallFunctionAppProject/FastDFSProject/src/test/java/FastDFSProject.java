@@ -1,3 +1,5 @@
+import org.csource.common.MyException;
+import org.csource.fastdfs.*;
 import org.junit.Test;
 
 import java.io.IOException;

@@ -6,7 +6,7 @@ import com.rabbitmq.client.QueueingConsumer;
 import com.wgw.rabbit.util.ConnectionUtil;
 
 /**
- * Created by Administrator on 2018/7/28.
+ * Created by Administrator on 2018/7/29.
  */
 public class Receiver {
     private static String EXCHANGE_NAME="test_dur";

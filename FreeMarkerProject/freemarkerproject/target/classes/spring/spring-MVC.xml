@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:Context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <Context:component-scan base-package="com.common.freemarker"/>
+    <!-- 需要将转换器设置给注解驱动 -->
+    <mvc:annotation-driven ></mvc:annotation-driven>
+
+    <bean id="freeMarkerConfigurer"  class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <!--<property name="templateLoaderPath" value="C:\\Users\\Administrator.PC-20180226XFFD\\Desktop\\TitanicWang\\BaseProject\\FreeMarkerProject\\freemarkerproject\\src\\main\\resources"></property>-->
+        <property name="templateLoaderPath" value="/src/main/resources/hello.ftl" />
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+    <!--&lt;!&ndash; 配置Freemarker屬性文件路徑 &ndash;&gt;-->
+    <!--<bean id="freemarkerConfiguration"  class="org.springframework.beans.factory.config.PropertiesFactoryBean">-->
+        <!--<property name="location" value="classpath:conf/freemarker.properties" />-->
+    <!--</bean>-->
+    <!--&lt;!&ndash; 配置freeMarker模板加載地址 &ndash;&gt;-->
+    <!--<bean id="freemarkerConfig"  class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">-->
+        <!--&lt;!&ndash; 視圖解析器會在/WEB-INF/ftl/路徑下掃描視圖文件 &ndash;&gt;-->
+        <!--<property name="templateLoaderPath" value="/src/main/resources/hello.ftl" />-->
+        <!--<property name="freemarkerVariables">-->
+            <!--<map>-->
+                <!--<entry key="xml_escape" value-ref="fmXmlEscape" />-->
+            <!--</map>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />-->
+    <!--&lt;!&ndash; 配置freeMarker視圖解析器 &ndash;&gt;-->
+    <!--<bean id="freemakerViewResolver"        class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">-->
+        <!--<property name="viewClass"        value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />-->
+        <!--&lt;!&ndash; 掃描路徑內所有以ftl結尾的文件 &ndash;&gt;-->
+        <!--<property name="viewNames">-->
+            <!--<array>-->
+                <!--<value>*.ftl</value>-->
+            <!--</array>-->
+        <!--</property>-->
+        <!--<property name="contentType" value="text/html; charset=UTF-8" />-->
+        <!--<property name="exposeRequestAttributes" value="true" />-->
+        <!--<property name="exposeSessionAttributes" value="true" />-->
+        <!--<property name="exposeSpringMacroHelpers" value="true" />-->
+        <!--<property name="requestContextAttribute" value="request" />-->
+        <!--&lt;!&ndash; 給視圖解析器配置優先級，你可以給之前jsp視圖解析器的值配為2 &ndash;&gt;-->
+        <!--<property name="order" value="1" />-->
+    <!--</bean>-->
+</beans>
