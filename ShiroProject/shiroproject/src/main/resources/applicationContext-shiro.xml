@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:component-scan base-package="com.qianfeng.shiro.mult.realm"/>
+    <context:component-scan base-package="com.common.shiro.mult.realm"/>
 
 
     <bean class="java.text.SimpleDateFormat">
@@ -43,7 +43,7 @@
 
     </bean>
 
-    <bean id="shiroFilter" class="com.qianfeng.shiro.mult.realm.MyShiroFilterFactoryBean" init-method="initMap">
+    <bean id="shiroFilter" class="com.common.shiro.mult.realm.MyShiroFilterFactoryBean" init-method="initMap">
         <property name="securityManager" ref="securityManager"/>
         <property name="loginUrl" value="/login.jsp"/>
         <!-- <property name="successUrl" value="/system/main"/> -->
@@ -62,7 +62,7 @@
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
 
     <!--配置realm-->
-    <bean id="myRealm" class="com.qianfeng.shiro.mult.realm.FirstRealm">
+    <bean id="myRealm" class="com.common.shiro.mult.realm.FirstRealm">
         <property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
                 <property name="hashAlgorithmName" value="SHA1"></property>
@@ -71,7 +71,7 @@
         </property>
     </bean>
     <!--配置后台帐号用的realm-->
-    <bean id="adminRealm" class="com.qianfeng.shiro.mult.realm.SecondRealm">
+    <bean id="adminRealm" class="com.common.shiro.mult.realm.SecondRealm">
         <property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
                 <property name="hashAlgorithmName" value="MD5"></property>

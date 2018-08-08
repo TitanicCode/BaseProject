@@ -1,0 +1,7 @@
+shiro整合spring的使用步骤
+1.web中配置shiro的拦截器，拦截所有资源/*,本程序中拦截器名字（自定义就可以）定义为<filter-name>shiroFilter</filter-name>
+2.spring的shiro文件中可以配置日期等特殊格式转换、安全管理器securityManager，并把realm等自定义的授权信息注入到安全管理器,还要在此配置拦截器，要求id与上述的web中定义的拦截器名字一致，在这个文件的拦截器中配置好如果未授权跳转到哪，什么页面需要怎么个访问方式（如不需要登录，可以通过记住我等）,还可以在此配置给传过来的密码加密，当然这一步完全也可以通过java代码实现。
+3.通过shiroUtil获取subject对象
+4.创建UsernamePasswordToken对象接收页面传过来的账户信息
+5.subject对象.验证(账户信息)dToken    subject.login(usernamePasswor)
+6.进入realm进行相应的认证授权等处理

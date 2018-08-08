@@ -12,6 +12,11 @@
         <module>consumerorder</module>
         <module>provideruser</module>
         <module>Eureka</module>
+        <module>consumerorder-ribbon</module>
+        <module>consumerorder-ribbon-config</module>
+        <module>consumeroder-ribbon-config-yml</module>
+        <module>eureka-ha</module>
+        <module>consumerorder-feign</module>
     </modules>
 
     <parent>

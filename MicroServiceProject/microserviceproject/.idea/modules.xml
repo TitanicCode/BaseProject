@@ -3,7 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Eureka/Eureka.iml" filepath="$PROJECT_DIR$/Eureka/Eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumeroder-ribbon-config-yml/consumeroder-ribbon-config-yml.iml" filepath="$PROJECT_DIR$/consumeroder-ribbon-config-yml/consumeroder-ribbon-config-yml.iml" />
       <module fileurl="file://$PROJECT_DIR$/consumerorder/consumerorder.iml" filepath="$PROJECT_DIR$/consumerorder/consumerorder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumerorder-feign/consumerorder-feign.iml" filepath="$PROJECT_DIR$/consumerorder-feign/consumerorder-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumerorder-ribbon/consumerorder-ribbon.iml" filepath="$PROJECT_DIR$/consumerorder-ribbon/consumerorder-ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumerorder-ribbon-config/consumerorder-ribbon-config.iml" filepath="$PROJECT_DIR$/consumerorder-ribbon-config/consumerorder-ribbon-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-ha/eureka-ha.iml" filepath="$PROJECT_DIR$/eureka-ha/eureka-ha.iml" />
       <module fileurl="file://$PROJECT_DIR$/microserviceproject.iml" filepath="$PROJECT_DIR$/microserviceproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/provideruser/provideruser.iml" filepath="$PROJECT_DIR$/provideruser/provideruser.iml" />
     </modules>

@@ -6,14 +6,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="consumeroder-ribbon-config-yml" />
         <module name="consumerorder" />
+        <module name="consumerorder-feign" />
+        <module name="consumerorder-ribbon" />
+        <module name="consumerorder-ribbon-config" />
         <module name="Eureka" />
+        <module name="eureka-ha" />
         <module name="provideruser" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="consumeroder-ribbon-config-yml" target="1.8" />
       <module name="consumerorder" target="1.8" />
+      <module name="consumerorder-feign" target="1.8" />
+      <module name="consumerorder-ribbon" target="1.8" />
+      <module name="consumerorder-ribbon-config" target="1.8" />
       <module name="Eureka" target="1.8" />
+      <module name="eureka-ha" target="1.8" />
       <module name="microserviceproject" target="1.8" />
       <module name="provideruser" target="1.8" />
     </bytecodeTargetLevel>

@@ -1,0 +1,18 @@
+server:
+  port: 8763
+spring:
+  application:
+    name: EUREKA-HA
+    profiles: peer3   #参数为 peer3的时候执行
+eureka:
+  instance:
+    hostname: peer3
+  client:
+    serviceUrl:
+      defaultZone: http://user:1234@peer1:8761/eureka/,http://user:1234@peer2:8762/eureka/
+security:
+  basic:
+    enabled: true #开启验证
+  user:
+    name: user
+    password: 1234

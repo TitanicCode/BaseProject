@@ -2,3 +2,4 @@
 1.消费者和提供者通过eureka提供的地址和端口分别和eureka连接
 2.消费者根据提供者的地址和端口访问提供者，实现对提供者的请求
 3.客户端访问消费者地址和端口进行访问
+4.springcloud要求@Configuration类不能被@SpringBootApplication扫描，所以要么将配置类放到启动类上一级目录，要么使用排除注解将它过滤掉，过滤的方法见模块consumerorder-ribbon-config
